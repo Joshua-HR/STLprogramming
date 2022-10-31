@@ -14,6 +14,6 @@ int main()
 
 	std::ostream_iterator<int> p2(fout, " ");
 	*p2 = 10;
-	*p3 = 20; // "10 20" 이 "a.txt" 로 출력
+	*p2 = 20; // "10 20" 이 "a.txt" 로 출력
 }
 

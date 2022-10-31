@@ -20,6 +20,12 @@ void print_first_element(std::vector<T>& v)
 }
 */
 
+// 핵심 1. 컨테이너가 저장하는 타입을 알고 싶으면
+//        "컨테이너이름::value_type" 으로 사용하면 됩니다. -다시 배우게됩니다
+
+// 2. "T::value_type" 형태로 사용되면 "typename" 필요 합니다.
+//    "typename T::value_type"
+
 template<typename T>
 void print_first_element(T& v)
 {

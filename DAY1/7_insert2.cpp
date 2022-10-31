@@ -39,4 +39,10 @@ int main(int argc, char** argv)
 
 	for (auto& n : s2)
 		std::cout << n << std::endl; 
+
+	// 아래 2줄 차이점 반드시 기억하세요
+	std::copy(s1.begin(), s1.end(), s2.begin());  // s1 => s2 덮어쓰기
+	std::copy(s1.begin(), s1.end(), std::back_inserter(s2));
+												// s1 => s2 끝에 추가
+
 }

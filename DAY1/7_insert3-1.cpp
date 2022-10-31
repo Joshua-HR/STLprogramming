@@ -21,4 +21,8 @@ int main(int argc, char** argv)
 
 	for (auto& n : s2)
 		std::cout << n << ", ";
+
+	// 핵심  : 내일 부터 아래 표기법은 자주 사용하겠습니다. 꼭 기억하세요
+	std::copy(s1.begin(), s1.end(), std::back_inserter(s2));
 }
+

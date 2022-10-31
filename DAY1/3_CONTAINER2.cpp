@@ -18,16 +18,16 @@ public:
 	slist_iterator(Node<T>* p = nullptr) : current(p) {}
 
 	// find 로 전달하려면 ++, *, ==, != 연산이 가능해야 합니다.
-	slist_iterator& operator++()
+	inline slist_iterator& operator++()
 	{
 		current = current->next;
 		return *this;
 	}
 
-	T& operator*() { return current->data ; }
+	inline T& operator*() { return current->data ; }
 
-	bool operator==(const slist_iterator& other) { return current == other.current; }
-	bool operator!=(const slist_iterator& other) { return current != other.current; }
+	inline bool operator==(const slist_iterator& other) { return current == other.current; }
+	inline bool operator!=(const slist_iterator& other) { return current != other.current; }
 };
 
 //slist_iterator<int> p(500번지);

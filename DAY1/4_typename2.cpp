@@ -28,7 +28,14 @@ void print_first_element(T& v)
 	// T			 : list<double> 인데.. 우리가 원하는 것은 "double" 입니다.
 	// T::value_type : list<double>::value_type 이므로 "double"
 
-	T::value_type n = v.front();
+//	T::value_type n = v.front();   // error. dependent name 입니다.
+									// 타입의 의미가 되려면 
+									// typename 필요
+//	typename T::value_type n = v.front(); // ok
+
+	// 그런데, 이경우는 C++11 에서 추가된 "auto" 를 사용하는 것이 더 좋습니다.
+	auto n = v.front();
+
 
 	std::cout << n << std::endl;
 }

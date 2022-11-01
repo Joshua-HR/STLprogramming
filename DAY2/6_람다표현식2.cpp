@@ -39,6 +39,14 @@ int main()
 	std::sort(v.begin(), v.end(), f);
 	std::sort(v.begin(), v.end(), f);
 
+	// 아래 처럼해도 절대 나쁘지 않습니다.
+	// => 객체 생성될때 생성자 호출이 계속 발생하면 느리지 않나요 ??
+	// => "생성자가 하는일이 없습니다. 최적화 되어서 생성자 호출 안됩니다."
+	// => 위 코드와 완전히 동일합니다. 절대 나쁜 코드 아닙니다.
+	std::sort(v.begin(), v.end(), std::greater<int>());
+	std::sort(v.begin(), v.end(), std::greater<int>());
+	std::sort(v.begin(), v.end(), std::greater<int>());
+
 }
 
 

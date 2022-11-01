@@ -35,7 +35,6 @@ void Sort(int* x, int sz, T cmp )
 		}
 	}
 }
-
 int main()
 {
 	int x[10] = { 1,3,5,7,9,2,4,6,8,10 };

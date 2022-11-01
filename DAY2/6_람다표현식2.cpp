@@ -46,8 +46,9 @@ int main()
 	std::sort(v.begin(), v.end(), std::greater<int>());
 	std::sort(v.begin(), v.end(), std::greater<int>());
 	std::sort(v.begin(), v.end(), std::greater<int>());
-
 }
+// 함수에 다른 함수를 보낼때
+// foo(일반함수) => 절대 치환 될수 없습니다. "인라인 함수라도"
 
 
 

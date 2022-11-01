@@ -1,10 +1,12 @@
 #include <iostream>
 #include <list>
 
-template<typename InputIter> 
-? sum(InputIter first, InputIter last)
+template<typename T> 
+typename T::value_type sum(T first, T last)
 {
-	? s = 0;
+	// T : 반복자 타입
+	// typename T::value_type : 반복자가 가리키는 요소의 타입
+	typename T::value_type s = 0;
 
 	while (first != last)
 	{

@@ -26,6 +26,10 @@ int main()
 
 	// 근접차를 구하는 알고리즘
 	std::adjacent_difference(v1.begin(), v1.end(), v2.begin());
+								// => 연산 이항함수를 전달하지 않으면 - 연산
+
+	std::adjacent_difference(v1.begin(), v1.end(), v2.begin(),
+											std::plus<int>() );
 
 	show(v2);
 }

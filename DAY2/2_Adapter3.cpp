@@ -17,10 +17,13 @@ int main()
 
 	// 역반복자 덕분에 "모든 알고리즘"은 거꾸로도 동작 합니다.
 
+
 	// std::copy 를 사용해서 s1의 모든 내용을 s2로 복사해보세요
 	// 단, 거꾸로 복사해 보세요..
 
-	// ????
+//	std::copy(s1.begin(), s1.end(), s2.begin() ); // 그대로 복사
+//	std::copy(s1.rbegin(), s1.rend(), s2.begin()); // 거꾸로 복사
+	std::copy(s1.begin(), s1.end(), s2.rbegin()); // 거꾸로 복사
 
 	show(s2); // 10, 9, 3, 7, 6,5,4,3,2,1  나와야 합니다.
 

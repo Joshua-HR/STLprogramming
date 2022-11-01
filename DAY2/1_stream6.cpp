@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <iterator> // stream, insert iterator
 
 // show 를 만들어 봅시다.
 // 1. Container 버전

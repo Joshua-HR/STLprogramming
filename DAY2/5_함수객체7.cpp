@@ -9,8 +9,12 @@
 
 // 요소를 비교하는 방식을 사용자가 변경할수 있게 하자.
 
+
+
 void Sort(int* x, int sz, bool(*cmp)(int, int) )
 {
+
+
 	for (int i = 0; i < sz - 1; i++)
 	{
 		for (int j = i + 1; j < sz; j++)
@@ -27,8 +31,15 @@ void Sort(int* x, int sz, bool(*cmp)(int, int) )
 // => 아래 처럼 비교 함수를 인라인 함수로 해도,
 //    Sort 에서 함수 포인터로 받으므로 절대 인라인 치환 될수 없습니다.
 //    결국, 위처럼 Sort 를 만들면 너무 느립니다.!
+
 inline bool cmp1(int a, int b) { return a > b; }
+
 inline bool cmp2(int a, int b) { return a < b; }
+
+
+
+
+
 
 int main()
 {

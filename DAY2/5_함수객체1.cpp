@@ -11,6 +11,7 @@
 
 
 
+
 struct Plus
 {
 	int operator()(int a, int b)

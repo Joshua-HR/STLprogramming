@@ -5,22 +5,39 @@ class URandom
 {
 	std::bitset<10> bs;
 	bool recycle;
+
 public:
-	URandom(bool b = false) : recycle(b) {}
+	URandom(bool b = false) : recycle(b) 
+	{
+		//bs.set(5);// 5번째 비트를 1로
+		bs.set();	// 모든  비트를 1로
+	}
 
-
+	
 	int operator()()
 	{
-		return rand() % 10;
+		if (bs.none()) // 모두 0 이면 더이상 중복되지 않은 난수가 없다
+		{
+			if (recycle == true)
+				bs.set();
+			else
+				return -1;
+		}
+
+		int k = -1;
+
+		while ( !bs.test(k = rand() % 10) );
+
+
+		bs.reset(k);
+
+		return k;
 	}
 };
 
-
-
-
-
-
 URandom urand;	
+
+
 
 int main()
 {

@@ -19,5 +19,15 @@ int main()
 
 	std::cout << s1.top() << std::endl; // 10
 	//=======================================================
+	
+	std::queue<int> q; // First In First Out
+	q.push(10);
+	q.push(20);
+
+	std::cout << q.front() << std::endl; // 10
+	
+	q.pop();
+
+	std::cout << q.front() << std::endl; // 20
 
 }

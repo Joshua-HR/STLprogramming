@@ -19,7 +19,14 @@ int main()
 	auto p2 = arr.end();
 
 	// 핵심 : array 는 "raw array" 와 같다는 점을 꼭 기억하세요
-	arr.push_back(10);
-	arr.resize(20);
-	arr.insert(arr.begin(), 3);
+	// => 크기를 변경하는 모든 작업은 안됩니다.
+	arr.push_back(10);			// error
+	arr.resize(20);				// error
+	arr.insert(arr.begin(), 3);	// error.
+
+	// std::array 에서 꺼내는 반복자는 어떤 category 일까요 ?
+	// => 연속된 메모리에 대한 반복자입니다.
+	// => 임의접근 반복자 입니다.
+	// => 모든 알고리즘 사용가능합니다.
+
 }

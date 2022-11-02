@@ -34,4 +34,25 @@ int main()
 	std::list<int>::size_type sz = s.size();
 	auto sz2 = s.size(); // C++11 부터는 이 코드 가능
 }
+
 // cppreference.com 에서 "std::list" 검색해 보세요.
+
+// 참고 : typename 에 대해서
+// => template 의존적으로 "타입"을 꺼낼때만 사용합니다.
+template<typename T>
+void foo(T a)
+{
+	T::value_type n; // error. T에 의존 합니다.
+	typename T::value_type n; // ok
+
+	std::list<int>::value_type n2; // ok
+							// T에 의존하지 않습니다
+							// dependent name이 아닙니다.
+							// typename 필요 없습니다.
+
+	std::list<T>::value_type n3; // error. T에 의존합니다.
+								 // typename 필요 합니다.
+
+	typename std::list<T>::value_type n3; // ok
+
+}

@@ -37,7 +37,8 @@ int main()
 	//----------------------------
 	for (auto& s : v)
 	{
-		FindChar fc("aeiouAEIOU");
+//		FindChar fc("aeiouAEIOU");
+		FindChar fc("0123456789");
 
 		std::replace_if(s.begin(), s.end(), fc, ' ');
 	}

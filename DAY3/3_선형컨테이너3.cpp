@@ -40,8 +40,12 @@ int main()
 					// "메모리 재할당 필요"
 					// "expensive" !
 
-	std::cout << v.size() << std::endl; // 9
-	std::cout << v.capacity() << std::endl; // ?
+	std::cout << v.size()     << std::endl; // 9
+	std::cout << v.capacity() << std::endl; // VC++ : 1.5 배증가 
+											// => 8 * 1.5 = 12
+											// g++ : 2배증가
+											// => 8 * 2 = 16
+				
 }
 
 

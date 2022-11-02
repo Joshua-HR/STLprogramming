@@ -26,6 +26,10 @@ public:
 	inline T& top()                  { return c.back(); }
 };
 
+#include <stack> // STL 의 stack. 
+				 // => 위코드와 거의 동일하게 만들어져 있습니다.
+				 // => 흔히 "stack adapter" 라고 합니다.
+
 int main()
 {
 	stack<int, std::list<int>>   s1;

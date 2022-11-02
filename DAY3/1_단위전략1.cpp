@@ -13,9 +13,12 @@ int main()
 	delete p2;
 
 	// C++ 에서는 메모리 할당 방식을 쉽게 변경하기 위해서
-	// "allocator" 라는 클래스를 제공합니다.
-	std::allocator<int> ax; // int 타입의 객체를 생성하는 메모리 할당기
+	// "allocator" 라는 클래스를 제공합니다. - C++98
 
+//	std::allocator<int> ax; // int 타입의 객체를 생성하는 메모리 할당기
+							// new/delete 사용
+
+	사용자가만든메모리할당기클래스 ax;
 
 	int* p3 = ax.allocate(10); // int 타입 10개의 메모리를 할당
 	int* p4 = ax.allocate(1);

@@ -17,4 +17,7 @@ int main()
 	auto p2 = std::make_pair(1, 3.4); // 함수 템플릿은 
 									  // 타입인자 생략가능
 
+	// 함수 인자로 pair 를 보낼때 make_pair 를 사용하는게 편리합니다.
+	foo( std::pair<int, double>(1, 3.4) ); // pair 임시객체로 전달
+	foo( std::make_pair(1, 3.4) ); // make_pair 사용
 }

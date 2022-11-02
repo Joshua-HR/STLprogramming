@@ -30,6 +30,9 @@ int main()
 		// std::replace(s.begin(), s.end(), 'i', ' ');
 
 		// 위코드 참고 해서 모든 모음을 공백으로 치환해 보세요
+		std::replace_if(s.begin(), s.end(), 
+			[](char c) { return c == 'i' || c == 'a' || c == 'e' || c =='o' || c == 'u';  },
+			' ');
 	}
 
 

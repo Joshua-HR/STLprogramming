@@ -57,3 +57,18 @@ int main()
 std::vector<int, debug_alloc<int>> v; // 메모리할당/해지방식 교체
 			// => 사용자 정의 메모리 할당기는 지켜야 되는 규칙이 있다.
 			//    위 코드 참고
+
+/*
+// 아래 코드는 클래스가 아닌, 함수가 사용하는 정책을 변경하는 것 입니다.
+// 이 경우는 "단위전략" 이라고 하지는 않습니다.
+int n1 = std::accumulate(v.begin(), v.end(), 0); 
+int n2 = std::accumulate(v.begin(), v.end(), 1, std::mutilpies<int>());
+
+template<typename Iter, typename OP>
+typename Iter::value_type accumulate(Iter first, Iter last,
+				typename Iter::value_type init,
+				OP op = std::plus<typename Iter::value_type>())
+{
+
+}
+*/

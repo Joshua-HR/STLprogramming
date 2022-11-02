@@ -26,13 +26,26 @@ public:
 
 int main()
 {
+//	std::vector<int, debug_alloc<int> > v;
+			// => size : 0,  capacity : 0
+
+//	std::vector<int, debug_alloc<int> > v(100);		
+			// => size : 100,  capacity : 100
+
+
 	std::vector<int, debug_alloc<int> > v;
+	v.reserve(100);
+			// => size : 0,   capacity : 100
+		
 
 	// 100 번 push_back 했을때 메모리 재할당 상황을 살펴 봅시다.
 	for (int i = 0; i < 100; i++)
 	{
 		v.push_back(0);
 	}
+
+	std::cout << v.size() << ", " << v.capacity() << std::endl;
+				// => 100, 141 ( VC++, 컴파일러마다 다를수 있음)
 }
 
 

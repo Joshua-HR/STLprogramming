@@ -29,7 +29,6 @@ public:
 	}
 };
 
-
 int main()
 {
 	// vector 사용시 메모리 할당기 변경하기.
@@ -37,9 +36,24 @@ int main()
 
 	std::cout << "===========" << std::endl;
 	
-	v.resize(5);
+	v.resize(5); // sizeof(int)*5 의 메모리 할당 필요
+				 // debug_alloc 의 allocate(5) 를 호출
+
 	std::cout << "===========" << std::endl;
 	
 	v.resize(10);
 	std::cout << "===========" << std::endl;
 }
+
+// 핵심 : 단위전략(Policy Base Design) 이란 ??
+
+// => 클래스가 사용하는 정책을 템플릿 인자로 교체할수 있게 만드는 디자인
+
+// => 메모리할당/해지 정책, 요소 비교 정책, 크기 비교 정책등을 템플릿인자로
+//    교체
+
+// => 각각의 정책은 지켜야 하는 규칙이 있다.
+
+std::vector<int, debug_alloc<int>> v; // 메모리할당/해지방식 교체
+			// => 사용자 정의 메모리 할당기는 지켜야 되는 규칙이 있다.
+			//    위 코드 참고

@@ -19,11 +19,11 @@ struct array
 						// 됩니다.
 
 	// STL 컨테이너는 반드시 begin, end 가 있어야 합니다.
-	iterator begin() { return ? ; }
-	iterator end() { return ? ; }
+	inline iterator begin() { return buff ; }
+	inline iterator end()   { return buff + N ; }
 
-	int size() const { return N; }
-	bool empty() const { return N==0; }
+	inline int size() const { return N; }
+	inline bool empty() const { return N==0; }
 };
 
 

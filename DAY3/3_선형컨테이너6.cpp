@@ -24,7 +24,12 @@ int main()
 
 	for (auto& s : v)
 	{
-		std::reverse(s.begin(), s.end());
+//		std::reverse(s.begin(), s.end());
+
+		// 'i' 자를 공백으로 치환!
+		// std::replace(s.begin(), s.end(), 'i', ' ');
+
+		// 위코드 참고 해서 모든 모음을 공백으로 치환해 보세요
 	}
 
 

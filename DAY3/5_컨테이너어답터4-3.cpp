@@ -12,6 +12,7 @@ int main()
 	// 우선순위를 비교하는 방법을 변경하는 코드. < 가 아닌 > 사용
 	std::priority_queue<int, std::vector<int>, std::greater<int>> pq;
 
+
 	pq.push(10);
 	pq.push(-10);
 	pq.push(-20);

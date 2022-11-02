@@ -32,6 +32,8 @@ public:
 
 int main()
 {
+	std::stack<int, std::list<int>>   s0;
+
 	stack<int, std::list<int>>   s1;
 	stack<int, std::vector<int>> s2; // vector 를 스택처럼 사용하겠다는 의미
 

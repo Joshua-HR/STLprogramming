@@ -27,3 +27,5 @@ int main()
                                             // 4항 함수 => 3항함수로 변경
 
 }
+// 함수형 언어의 "currying" 과 유사한 개념
+// 파이썬 : functools.partial 

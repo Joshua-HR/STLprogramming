@@ -40,7 +40,20 @@ int main()
 	sp1.reset(); // sp1 = nullptr 의 의미
 	sp2 = nullptr; // 직접 이렇게 해도 됩니다.
 					// 이순간 참조계수는 0, 객체 파괴
+
+			// sp2.operator=(nullptr) 이 호출됩니다.
+			// nullptr 의 데이타 타입은 std::nullptr_t 타입입니다.
 }
-
-
+/*
+template<typename T> class shared_ptr
+{
+public:
+	shared_ptr& operator=(std::nullptr_t p)
+	{
+		reset();
+		return *this;
+	}
+	void reset() { ... }
+};
+*/
 

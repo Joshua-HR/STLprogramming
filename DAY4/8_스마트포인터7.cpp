@@ -18,6 +18,8 @@ int main()
 	std::shared_ptr<People> sp1 = std::make_shared<People>("kim");
 	std::shared_ptr<People> sp2 = std::make_shared<People>("lee");
 
+	// 상호 참조(원형 참조, cycle reference) 라고 합니다.
+	// 스마트 포인터 사용시 cycle reference 가 발생하면 자원 누수 입니다.
 	sp1->bf = sp2; 
 	sp2->bf = sp1;
 }

@@ -15,9 +15,9 @@ struct PeopleHash
 	inline int operator()(const People& p) const
 	{
 		std::hash<std::string> hs;
-		std::hash<int> hi;
-
-		return hs(p.name) + hi(p.age);
+//		std::hash<int> hi;
+//		return hs(p.name) + hi(p.age);
+		return hs(p.name);
 	}
 };
 // People 안에 == 연산자를 재정의 했거나
@@ -29,13 +29,11 @@ struct PeopleEqual
 		return p1.name == p2.name && p1.age == p2.age;
 	}
 };
-
 int main()
 {
 	// 핵심 : 사용자 정의 타입을 unordered(hash) 에 넣기
 
 	std::unordered_set<People, PeopleHash, PeopleEqual> s;
-
 
 	s.emplace("kim", 20); // s.insert( People("kim",20))
 	s.emplace("lee", 25);

@@ -43,9 +43,21 @@ int main()
 
 	// 핵심 5. 아래 코드를 평가해 보세요 - 중요!!
 
+	// std::find 는 선형검색 입니다.
+	// => first 부터 ++로 이동하면서 검색
+	// => 아래 코드가 에러는 아니지만 성능이 좋지 않습니다.
+	// => "Equality(동일)" 검색
 	auto ret2 = std::find(s.begin(), s.end(), 25);
 
 	std::cout << *ret2 << std::endl; // 25
+
+
+	// set은 이진 검색이 빠릅니다.
+	// => 알고리즘(일반함수)와 동일한 이름의 멤버 함수가 있다면
+	//    멤버 함수를 사용해라!
+	// => "Equivalency(동등)" 검색
+	auto ret3 = s.find(25);
+	std::cout << *ret3 << std::endl; // 25
 
 }
 

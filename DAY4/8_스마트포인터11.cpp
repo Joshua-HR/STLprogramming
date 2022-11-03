@@ -25,6 +25,7 @@ public:
 		
 		// 스레드로 start 실행
 		std::thread t(&Machine::start, this); 
+		t.detach();
 	}
 
 	void start()
@@ -32,9 +33,6 @@ public:
 		data = 10;
 	}
 };
-
-
-
 
 int main()
 {

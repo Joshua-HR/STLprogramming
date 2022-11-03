@@ -37,9 +37,15 @@ int main()
 
 	// 핵심 4. set 의 반복자는 읽기 전용 반복자 입니다.
 	auto p = s.begin();
-//	*p = 200; // error
-	
+//	*p = 200;	// error	
 	int n = *p; // ok
+
+
+	// 핵심 5. 아래 코드를 평가해 보세요 - 중요!!
+
+	auto ret2 = std::find(s.begin(), s.end(), 25);
+
+	std::cout << *ret2 << std::endl; // 25
 
 }
 

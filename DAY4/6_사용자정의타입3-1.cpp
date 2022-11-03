@@ -29,14 +29,21 @@ public:
 
 int main()
 {
+	// !=, >, >=, <= 함수를 템플릿으로 제공하는 namespace 
+	using namespace std::rel_ops;
+
 	// 사용자 정의 타입이 < 와 == 만 연산자재정의함수를 제공하면
 	// 나머지 모든 비교연산을 사용할수 있습니다.
 	Point p1(1, 2);
 	Point p2(1, 2);
 
-	p1 == p2;
-	p1 < p2;
+	p1 == p2; // p1.operator==(p2)
+	p1 < p2;  // p1.operator<(p2)
 
+	p1 != p2;
+	p1 > p2;
+	p1 >= p2;
+	p1 <= p2;
 }
 
 

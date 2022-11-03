@@ -31,4 +31,9 @@ int main()
 	// ¾Æ·¡´Â equivalency 
 	auto ret2 = s.find(12); 
 	std::cout << *ret2 << std::endl; // 15
+
+
+//	auto ret3 = std::find_if(s.begin(), s.end(), 
+//		[](int n) { return ==; })
+);  
 }

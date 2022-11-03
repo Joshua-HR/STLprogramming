@@ -21,19 +21,43 @@ public:
 
 		holdme = shared_from_this();	// main 함수에 있는
 										// sp 가 만든 관리객체를 공유합니다.
+	
 		// 스레드로 start 실행
 		std::thread t(&Machine::start, this); 
 		t.detach();
 	}
 
+
+	/*
 	void start()
 	{
 		data = 10;
 
 		std::cout << "finish start" << std::endl;
+
 		holdme.reset(); // Machine 파괴. 소멸자 호출
+						// 자원의 해지는 함수의 마지막 문장에서 하지 마세요
+						// 함수의 1번째 문장에서 하세요
+						// 함수 중간에서 일이 발생하면
+						// 이곳이 실행되지 않습니다.
 	}
+	*/
+	void start()
+	{
+		std::shared_ptr<Machine> local(holdme);
+		holdme.reset();
+
+		data = 10;
+
+		std::cout << "finish start" << std::endl;	
+
+		
+	}	// <= local 지역변수 파괴
+		//	  참조계수 감소, Machine 객체 파괴.
+
 };
+
+
 
 int main()
 {

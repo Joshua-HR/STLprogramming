@@ -21,8 +21,6 @@ public:
 
 		holdme = shared_from_this();	// main 함수에 있는
 										// sp 가 만든 관리객체를 공유합니다.
-
-		
 		// 스레드로 start 실행
 		std::thread t(&Machine::start, this); 
 		t.detach();
@@ -31,6 +29,9 @@ public:
 	void start()
 	{
 		data = 10;
+
+		std::cout << "finish start" << std::endl;
+		holdme.reset(); // Machine 파괴. 소멸자 호출
 	}
 };
 

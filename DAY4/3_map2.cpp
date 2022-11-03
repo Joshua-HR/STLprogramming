@@ -33,12 +33,27 @@ int main()
 	}
 	//=======================================
 	// map 의 모든 항목 출력
+	/*
 	for (const auto& p : indexMap)
 	{
 		// p 는 결국 pair 의 참조 입니다.
 		std::cout << p.first << " : ";
+
 		show(p.second);	// p.second 는 list<int>
 	}
+	*/
+
+	// C++17 의 "structural binding" 문법을 사용하면 좀더 편리합니다.
+	// map 의 요소는 pair 인데. 
+	// first, last 값을 각각 key, value 에 담겠다는 의미.
+	for (const auto& [key, value] : indexMap)
+	{
+		
+		std::cout << key << " : ";
+
+		show( value );	// p.second 는 list<int>
+	}
+
 }
 
 

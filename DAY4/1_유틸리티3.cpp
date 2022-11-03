@@ -15,7 +15,14 @@ int main()
 	std::ofstream fout("a.txt");
 
 
-	std::cout << "hello";	// 표준 출력에 출력
-	fout	  << "hello";	// 파일로 출력
+	// 핵심 3. 메모리(string) 스트림은 메모리(문자열)에 출력
+	std::ostringstream oss;
 
+//	std::cout << "hello";	// 표준 출력에 출력
+//	fout	  << "hello";	// 파일로 출력
+	oss       << "hello";   // oss 의 내부에 있는 문자열에 출력
+
+	std::string s = oss.str(); // oss 의 내부 문자열 꺼내기
+
+	std::cout << s << std::endl;
 }

@@ -18,6 +18,22 @@ int main()
 	s.insert(40);
 	s.insert(25);
 
+	// 핵심 2. set 은 중복을 허용하지 않습니다.
+	// insert 반환 타입 : pair<반복자, bool> 
+	
+//	std::pair< std::set<int>::iterator, bool> ret = s.insert(15);
+
+	auto ret = s.insert(15);
+
+	if (ret.second == false)
+	{
+		std::cout << "입력 실패, 이미 값이 있습니다." << std::endl;
+		std::cout << *(ret.first) << std::endl;
+	}
+
+
+
+
 	auto p = s.begin();
 
 	while (p != s.end())

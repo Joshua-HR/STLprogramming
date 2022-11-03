@@ -65,8 +65,12 @@ v.push_back(Point(1, 2)); // bad
 v.emplace_back(1, 2);     // good
 
 
+// v.emplace_back( Point(1,2)) 는 뭔가요 ??
+// 1. 임시객체 Point(1,2) 생성됩니다 - 생성자 호출
+// 2. emplace_back 안에서 new Point(1에서만든임시객체)- 복사 생성자 호출
 
-
+// v.emplace_back( 1,2) 
+// 1. emplace_back 안에서 new Point(1,2) 
 
 
 

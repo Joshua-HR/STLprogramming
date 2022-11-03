@@ -1,19 +1,26 @@
 #include <iostream>
 
+// 1. 템플릿으로 만들어야 한다.
+
+template<typename T>
 class Ptr
 {
-	Car* obj;
+	T* obj;
 public:
-	Ptr(Car* p = 0) : obj(p) {}
+	Ptr(T* p = nullptr) : obj(p) {}
 
 	~Ptr() { delete obj; }
 
-	Car* operator->() { return obj; }
-	Car& operator*() { return *obj; }
+	T* operator->() { return obj; }
+	T& operator*() { return *obj; }
 };
-
 int main()
 {
+	Ptr<int> p1 = new int;
+	*p1 = 10;
+	std::cout << *p1 << std::endl;
+
+	Ptr<int> p2 = p1; // runtime error
 }
 
 

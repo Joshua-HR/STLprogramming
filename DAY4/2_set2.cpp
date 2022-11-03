@@ -31,17 +31,15 @@ int main()
 		std::cout << *(ret.first) << std::endl;
 	}
 
+	// 핵심 3. set 에서 요소의 삽입은 insert(emplace)만 가능합니다.
+//	s.push_back(1); // error
 
 
-
+	// 핵심 4. set 의 반복자는 읽기 전용 반복자 입니다.
 	auto p = s.begin();
-
-	while (p != s.end())
-	{
-		std::cout << *p << std::endl;
-
-		++p; 
-	}
+//	*p = 200; // error
+	
+	int n = *p; // ok
 
 }
 

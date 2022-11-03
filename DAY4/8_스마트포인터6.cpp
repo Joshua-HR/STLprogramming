@@ -27,6 +27,12 @@ int main()
 
 	std::shared_ptr<int> sp4(new int[10], [](int* p) { delete[] p; });
 					// => ok..
+
+	std::shared_ptr<int[]> sp5(new int[10]); // ok.. 단, C++17 부터
+
+	// 참고, new int[10] 이 필요하고, 자동삭제를 원하면!!!
+	// 스마트 포인터 보다 vector 를 먼저 고려해라.
+//	std::vector<int> v(10);
 }
 
 

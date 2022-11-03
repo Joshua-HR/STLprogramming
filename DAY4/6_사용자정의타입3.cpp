@@ -21,6 +21,11 @@ public:
 	{
 		std::cout << x << ", " << y << std::endl;
 	}
+	// < 연산자 재정의
+	bool operator<(const Point& pt) const
+	{
+		return x < pt.x;
+	}
 };
 int main()
 {
@@ -38,9 +43,12 @@ int main()
 	// std::sort(v.begin(), v.end()); // error
 
 	// 방법 1. 크기 비교를 하는 람다표현식 전달
-	std::sort(v.begin(), v.end(),
-		[](const Point& p1, const Point& p2) { return p1.x < p2.x; });
+//	std::sort(v.begin(), v.end(),
+//		[](const Point& p1, const Point& p2) { return p1.x < p2.x; });
 
+
+	// 방법 2. Point 타입 자체에 < 연산자를 재정의 하면 된다.
+	std::sort(v.begin(), v.end()); // <
 
 }
 

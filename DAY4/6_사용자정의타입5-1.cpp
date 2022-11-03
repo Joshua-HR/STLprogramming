@@ -31,9 +31,18 @@ int main()
 							// error. 
 							// 같은지 비교할때  "==" 연산자를 사용하는데
 							// Point 안에는 "==" 연산자가 재정의되어 있지않다
+							// "equality" 동일
 
-	auto ret2 = s.find(Point(3, 2));	
+	auto ret2 = s.find(Point(3, 1));	// Equivalency
+										// 동등하다!
+
+	if (ret2 != s.end())
+	{
+		std::cout << ret2->x << ", " << ret2->y << std::endl;
+	}
 }
+
+
 /*
 template<typename T,
 		 typename Pr = std::less<T>,

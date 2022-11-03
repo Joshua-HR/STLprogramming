@@ -27,12 +27,34 @@ int main()
 	// 아래 2줄을 잘 생각해 보세요 - 중요합니다.!
 	// equality, Equivalency
 
-	auto ret1 = s.find(Point(3, 2));
-	auto ret2 = std::find(s.begin(), s.end(), Point(3, 2));
+//	auto ret1 = std::find(s.begin(), s.end(), Point(3, 2));
+							// error. 
+							// 같은지 비교할때  "==" 연산자를 사용하는데
+							// Point 안에는 "==" 연산자가 재정의되어 있지않다
+
+	auto ret2 = s.find(Point(3, 2));	
 }
+/*
+template<typename T,
+		 typename Pr = std::less<T>,
+	     typename Alloc = std::allocator<T> >
+class set
+{
+	Pr f;
+public:
+	iterator find(const T& elem)
+	{
+		if (f(root, elem))
+			move right;
 
+		else if (f(elem, root))
+			move left;
 
-
+		else 
+			찾았다!!
+	}
+};
+*/
 
 
 

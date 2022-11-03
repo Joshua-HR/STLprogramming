@@ -23,5 +23,5 @@ int main()
 
 	std::string s = oss.str();
 
-	std:cout << s << std::endl;
+	std::cout << s << std::endl;
 }

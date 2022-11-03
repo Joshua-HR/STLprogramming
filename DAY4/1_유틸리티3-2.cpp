@@ -13,6 +13,7 @@ int main()
 	std::string s;
 //	iss >> s;	// "to" 즉, iss 가 가진 문자열에서 1번째 단어
 
+
 	while (iss >> s)
 		std::cout << s << std::endl;
 

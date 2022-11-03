@@ -14,7 +14,6 @@ int main()
 	// => cout, cin 과 사용법 동일
 	std::ofstream fout("a.txt");
 
-
 	// 핵심 3. 메모리(string) 스트림은 메모리(문자열)에 출력
 	std::ostringstream oss;
 

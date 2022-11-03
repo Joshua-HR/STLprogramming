@@ -1,6 +1,6 @@
 #include <iostream>
 
-// ¿¬»êÀÚ ÀçÁ¤ÀÇ´Â 2°¡Áö ¹æ¹ıÀ¸·Î °¡´ÉÇÕ´Ï´Ù.
+// ì—°ì‚°ì ì¬ì •ì˜ëŠ” 2ê°€ì§€ ë°©ë²•ìœ¼ë¡œ ê°€ëŠ¥í•©ë‹ˆë‹¤.
 class Point
 {
 public:
@@ -10,20 +10,20 @@ public:
 	~Point() { }
 
 	
-	// ¹æ¹ı 1 ¸â¹ö ÇÔ¼ö·Î ±¸Çö
+	// ë°©ë²• 1 ë©¤ë²„ í•¨ìˆ˜ë¡œ êµ¬í˜„
 	bool operator<(const Point& pt) const
 	{
 		std::cout << "member <" << std::endl;
-		return x < pt.x; // return "this.x < pt.x" ÀÔ´Ï´Ù.
+		return x < pt.x; // return "this.x < pt.x" ì…ë‹ˆë‹¤.
 	}
 	friend bool operator>(const Point& p1, const Point& p2);
 };
 
-// ¹æ¹ı 2. ¸â¹ö°¡ ¾Æ´Ñ ÇÔ¼ö ·Î ±¸Çö
+// ë°©ë²• 2. ë©¤ë²„ê°€ ì•„ë‹Œ í•¨ìˆ˜ ë¡œ êµ¬í˜„
 bool operator>(const Point& p1, const Point& p2)
 {
 	std::cout << "non-member >" << std::endl;
-	return p1.x < p2.x;
+	return p1.x > p2.x;
 }
 
 int main()
@@ -31,6 +31,6 @@ int main()
 	Point p1(1, 2);
 	Point p2(2, 3);
 
-	p1 < p2; // p1.operator<(p2)  Áï, ¸â¹ö ÇÔ¼ö »ç¿ë. ÀÎÀÚ°¡ ÇÑ°³ÀÎ ÇÔ¼ö
+	p1 < p2; // p1.operator<(p2)  ì¦‰, ë©¤ë²„ í•¨ìˆ˜ ì‚¬ìš©. ì¸ìê°€ í•œê°œì¸ í•¨ìˆ˜
 	p1 > p2; // operator>(p1, p2) 
 }

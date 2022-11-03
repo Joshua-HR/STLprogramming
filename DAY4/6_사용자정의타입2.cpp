@@ -40,11 +40,33 @@ int main()
 	// 4. 객체를 전달하지 말고
 	//    객체를 만들기 위한 생성자 인자를 전달한다.
 	v.emplace_back(1, 2);
-
-
+		// 위 함수 내부적으로 new Point(1,2) 로 생성
 
 	std::cout << "------------------" << std::endl;	
 }
+
+// 컨테이너가 primitive 타입이나 포인터 타입을 보관하면
+// push_xxx() 계열 함수/insert 사용하면 됩니다.
+
+std::vector<int>    v1;
+std::vector<Point*> v2;
+
+v1.push_back(1);
+v2.push_back(new Point(1,2));
+
+
+// 컨테이너가 "사용자 정의 타입을 값으로 보관" 하면 emplace가 효율적입니다.
+// push_front => emplace_front
+// push_back  => emplace_back
+// insert     => emplace
+// 
+std::vector<Point> v;
+v.push_back(Point(1, 2)); // bad
+v.emplace_back(1, 2);     // good
+
+
+
+
 
 
 

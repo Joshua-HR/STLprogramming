@@ -48,7 +48,7 @@ int main()
 
 
 	// 방법 2. Point 타입 자체에 < 연산자를 재정의 하면 된다.
-	std::sort(v.begin(), v.end()); // <
+//	std::sort(v.begin(), v.end()); // <
 
 }
 

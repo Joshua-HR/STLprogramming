@@ -39,7 +39,9 @@ int main()
 
 	//===================
 	// 시간 타입을 만들어 봅시다.
-	using seconds = std::chrono::duration_cast<int, std::ratio<1, 1>>;
-	using minutes = std::chrono::duration_cast<int, std::ratio<?>>;
-	using hours   = std::chrono::duration_cast<int, std::ratio<?>>;
+	using seconds = std::chrono::duration<int, std::ratio<1, 1>>;
+	using minutes = std::chrono::duration<int, std::ratio<60, 1>>;
+	using hours   = std::chrono::duration<int, std::ratio<3600,1>>;
+
+	// 결론 : 모든 단위는 결국 "std::chrono::duration" 으로 표현가능합니다.
 }

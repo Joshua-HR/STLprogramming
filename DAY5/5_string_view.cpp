@@ -25,7 +25,9 @@ int main()
 	// "포인터 크기" + "문자열 길이 관리"
 	std::cout << sizeof(sv) << std::endl; // 32bit 8
 
-
+	// 주의 string_view 는 읽기만 가능합니다.
+	//sv[0] = 'a'; // error
+	char c = sv[0]; // ok
 
 
 

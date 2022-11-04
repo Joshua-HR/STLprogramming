@@ -20,7 +20,20 @@ int main()
 
 	// 2. duration 을 사용해서 거리를 나타내는 타입을 설계해 봅시다.
 	using Meter      = std::chrono::duration<int, std::ratio<1, 1>>;
-	using CentiMeter = std::chrono::duration<int, std::ratio<?>>;
-	using KiloMeter  = std::chrono::duration<int, std::ratio<?>>;
-	using MilliMeter = std::chrono::duration<int, std::ratio<?>>;
+	using CentiMeter = std::chrono::duration<int, std::ratio<1, 100>>;
+	using MilliMeter = std::chrono::duration<int, std::ratio<1, 1000>>;
+	using KiloMeter  = std::chrono::duration<int, std::ratio<1000, 1>>;
+
+	Meter me(1230); // 1230m
+
+	CentiMeter cm(me);
+	std::cout << cm.count() << std::endl; // 123000cm
+
+	// Meter 객체를 => KiloMeter 객체로.. 
+	// => 데이타 손실의 가능성 있음
+//	KiloMeter km = me; // error
+
+	KiloMeter km = std::chrono::duration_cast<KiloMeter>(me);
+
+	std::cout << km.count() << std::endl;
 }

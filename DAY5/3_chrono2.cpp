@@ -36,4 +36,10 @@ int main()
 	KiloMeter km = std::chrono::duration_cast<KiloMeter>(me);
 
 	std::cout << km.count() << std::endl;
+
+	//===================
+	// 시간 타입을 만들어 봅시다.
+	using seconds = std::chrono::duration_cast<int, std::ratio<1, 1>>;
+	using minutes = std::chrono::duration_cast<int, std::ratio<?>>;
+	using hours   = std::chrono::duration_cast<int, std::ratio<?>>;
 }

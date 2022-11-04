@@ -22,7 +22,8 @@ int main()
 	using Meter      = std::chrono::duration<int, std::ratio<1, 1>>;
 	using CentiMeter = std::chrono::duration<int, std::ratio<1, 100>>;
 	using MilliMeter = std::chrono::duration<int, std::ratio<1, 1000>>;
-	using KiloMeter  = std::chrono::duration<int, std::ratio<1000, 1>>;
+//	using KiloMeter  = std::chrono::duration<int, std::ratio<1000, 1>>;
+	using KiloMeter  = std::chrono::duration<int, std::kilo>;
 
 	Meter me(1230); // 1230m
 
@@ -31,8 +32,7 @@ int main()
 
 	// Meter 객체를 => KiloMeter 객체로.. 
 	// => 데이타 손실의 가능성 있음
-//	KiloMeter km = me; // error
-
+	KiloMeter km = me; // error
 	KiloMeter km = std::chrono::duration_cast<KiloMeter>(me);
 
 	std::cout << km.count() << std::endl;

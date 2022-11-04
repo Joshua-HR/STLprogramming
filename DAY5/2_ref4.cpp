@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 
 void foo(int& a) { a = 200; }
 

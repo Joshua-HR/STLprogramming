@@ -25,7 +25,12 @@ public:
 class Button
 {
 public:
-	void(*handler)() = nullptr;
+	// callback 을 만들때 함수 포인터를 사용하면 제약이 많습니다.
+	// 1. 인자를 갯수가 동일해야 하고
+	// 2. 멤버 함수 등록도 안됩니다.
+	//void(*handler)() = nullptr;
+
+	std::function<void()> handler = nullptr;
 
 	void Click()
 	{
@@ -34,11 +39,11 @@ public:
 			handler();
 	}
 };
-
 int main()
 {
 	Button btn;
-	btn.handler = &f1;
+//	btn.handler = std::bind(&f4, 0, 0, 0, 0);
+	btn.handler = []() { std::cout << "lambda" << std::endl; };
 	btn.Click();
 }
 

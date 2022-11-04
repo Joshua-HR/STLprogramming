@@ -18,10 +18,16 @@ int main()
 
 	// 핵심 2. C++17 의 string_view
 	// => 아래 2줄의 차이점이 핵심
-	std::string		 st = s;
-	std::string_view sv = s;      
+	std::string		 st = s; // 깊은 복사. 문자열 자체를 복사 합니다.
+	std::string_view sv = s; // s가 가진 문자열을 가리킵니다.     
 
-	std::cout << sizeof(sv) << std::endl; // 8
+	// string_view 의 크기는
+	// "포인터 크기" + "문자열 길이 관리"
+	std::cout << sizeof(sv) << std::endl; // 32bit 8
+
+
+
+
 
 
 

@@ -9,10 +9,17 @@ void foo()
 {
 	for (int i = 0; i < 1000000; i++)
 	{
-		x = x + 1;
+	//	x = x + 1;
+
+		// 위 한줄은 아래의 3줄로 컴파일 됩니다.
+		__asm
+		{
+			mov eax, x
+			add eax, 1
+			mov x, eax
+		}
 	}
 }
-
 int main()
 {
 	std::thread t1(&foo);

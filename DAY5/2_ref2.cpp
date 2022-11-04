@@ -5,11 +5,13 @@
 template<typename T>
 class reference_wrapper
 {
-
+	T* pobj;
 public:
+	reference_wrapper(T& obj) : pobj(&obj) {}
 
+	// "raw reference" 로의 변환을 위한 변환 연산자
+	operator T& () { return *pobj; }
 };
-
 
 int main()
 {
@@ -18,6 +20,9 @@ int main()
 
 	reference_wrapper<int> r1 = n1;
 	reference_wrapper<int> r2 = n2;
+
+	// "raw reference" 와의 호환도 필요 합니다.
+	int& r3 = r1; // r1.operator int&() 라는 변환 연산자 필요
 
 	r1 = r2;	
 

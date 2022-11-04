@@ -18,4 +18,9 @@ int main()
 
 	std::cout << d2.count() << std::endl; // 20
 
+	// 2. duration 을 사용해서 거리를 나타내는 타입을 설계해 봅시다.
+	using Meter      = std::chrono::duration<int, std::ratio<1, 1>>;
+	using CentiMeter = std::chrono::duration<int, std::ratio<?>>;
+	using KiloMeter  = std::chrono::duration<int, std::ratio<?>>;
+	using MilliMeter = std::chrono::duration<int, std::ratio<?>>;
 }

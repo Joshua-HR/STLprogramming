@@ -1,4 +1,5 @@
 #include <iostream>
+#include <type_traits> // C++11 에서 추가된 라이브러리.
 
 // 아래 코드가 T가 포인터 인지 조사하는 코드입니다.
 template<typename T> struct is_pointer
@@ -16,7 +17,9 @@ template<typename T> struct is_pointer<T*>
 template<typename T> void foo(const T& b)
 {
 	// T : int, int*
-	if (is_pointer<T>::value)
+//	if ( is_pointer<T>::value )
+	if ( std::is_pointer<T>::value)
+
 		std::cout << "포인터" << std::endl;
 	else
 		std::cout << "포인터 아님" << std::endl;

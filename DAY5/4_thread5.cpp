@@ -23,7 +23,7 @@ int goo()
 int main()
 {
 	// 함수를 비동기(스레드)로 실행하고 결과값을 담을 future 반환
-	std::future ft = std::async(&goo);
+	std::future<int> ft = std::async(&goo);
 
 	std::cout << "main 계속 실행" << std::endl;
 

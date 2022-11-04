@@ -20,12 +20,17 @@ void foo()
 // lock 를 관리하는 도구를 사용하세요
 void foo()
 {
-	std::lock_guard<std::mutex> g(m);	// 1. 내부적으로 m 보관
-										// 2. 생성자에서 m.lock()
+	{
+		std::lock_guard<std::mutex> g(m);	// 1. 내부적으로 m 보관
+		// 2. 생성자에서 m.lock()
 
-	shared_data = 200;
+		shared_data = 200;
 
-}
+	}
+
+
+
+} // <== g 파괴. 소멸자에서 m.unlock()
 
 
 

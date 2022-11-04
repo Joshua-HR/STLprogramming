@@ -14,7 +14,14 @@ void foo( std::promise<int>& pro)
 
 	// 주스레드에 결과를 알려준다.
 	pro.set_value(100); // 이 순간 future 객체에 100을 넣게 됩니다.
+
+//	throw 1; // 예외는 스레드별로 처리 됩니다.
+			 // 이렇게 하면 주스레드에 예외가 전달되지 않습니다.
+
+//	pro.set_exception(0); // 주스레드에 예외 전달
 }
+
+
 int main()
 {
 	// 1. promise 객체를 만들고
